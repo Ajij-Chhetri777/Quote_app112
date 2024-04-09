@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+<style>
+    .sidenav {
+        width = 0;
+        padding-top: 60px;
+        transition: 0.5s;
+        margin: 0px;
+        padding: 0px;
+        top: 0;
+        left:0;
+        height: 100%;
+        background-color: cornflowerblue;
+        position: fixed;
+        overflow-x: hidden; 
+        {% comment %} overflow is key to make this shit possible {% endcomment %}
+    }
+    .sidenav a {
+        display:block;
+        font-size: 25px;
+        text-align : center;
+        text-decoration: none;
+        padding-top: 30px;
+        transition: 0.3s;
+    }
+    #main {
+        transition: margin-left .5s;
+        padding: 16px;
+      }
+      {% comment %} @media screen and (max-height: 450px) {
+        .sidenav {padding-top: 15px;}
+        .sidenav a {font-size: 18px;}
+      } {% endcomment %}
+</style>
+<div id = "main">
+{%  block title%}
+
+{% endblock %}</div>
+</head>
+<body>
+<div id  = "mySidenav" class = "sidenav">
+    <a href = "#" onclick = "closenav()">&times;</a>
+    <a href = "{% url 'favourite_quotes' %}">favourite quotes </a>
+    <a href = "{% url 'post' %}">  add</a>
+    <a href = "{% url 'home' %}"> home</a>
+    <a href = "{% url  'register' %}"> register</a>
+</div>
+<div class = "main">
+    <span style="font-size:30px;cursor:pointer" onclick="opennav()">&#9776; open</span>
+
+    {% block content %}
+{% endblock %}
+</div>
+<script>
+    function opennav(){
+        document.getElementById("mySidenav").style.width = "350px";
+        document.getElementById("main").style.marginLeft = "350px";
+    }
+    function closenav(){
+        document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("main").style.marginLeft = "0";
+    }
+</script>
+</body>
+</html>

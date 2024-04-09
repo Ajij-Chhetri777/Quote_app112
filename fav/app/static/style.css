@@ -1,0 +1,23 @@
+.center{
+    font-size: 50px;
+    text-align: center;
+    font-style: Amaze;
+}
+.center a{
+text-decoration: none;
+margin-top : 50px
+}
+.item{
+    
+    font-size: 50px;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+#bar{
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    width: 25%;
+    background-color: cornflowerblue;
+}

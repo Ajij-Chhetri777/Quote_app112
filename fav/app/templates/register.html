@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class = "register">
+<form method = "POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type = "submit"> Submit </button>
+</form>
+<p> already login ? then <a href = "{%  url 'login' %}"> click here </a> </p>
+</div>
+
+{% endblock %}
+{% block title%}
+<style>
+    .register{
+        text-align : center;
+        
+    }
+</style>
+{% endblock%}

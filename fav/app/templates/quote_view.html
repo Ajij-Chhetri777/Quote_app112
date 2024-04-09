@@ -1,0 +1,30 @@
+{% extends  'base.html' %}
+{% block content %}
+{% for y in quote %}
+<div class="item2"><a href = "{%url 'ping' y.key %}">{{y.line}}</a>
+</div>
+
+{% endfor %}
+
+{% endblock %}
+{% block title %}
+ <style>
+    .item2 {
+        background-color: antiquewhite;
+        font-size: 35px;
+        font-family: 'Courier New', Courier, monospace;
+        margin-left:150px;
+        padding-left:150px;
+    }
+    .item1{
+        background-color: gainsboro;
+        margin-left: 150px;
+        padding-left: 150px;
+        font-size: 30px;
+
+    }
+    .item1 a{
+        text-decoration: none;
+    }
+</style>
+{% endblock %}

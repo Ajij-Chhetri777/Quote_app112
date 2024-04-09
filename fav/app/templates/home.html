@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{%block content %}
+{% for x in category%}
+     <div class="center"><a href="{% url 'quote_view' x.id %}" class = "nice">{{x.name}}</a> </div>
+  
+{% endfor %}
+
+{% endblock %}
+{% block title %}
+{% load static %}
+<style>
+     .center{
+          text-align : center;
+          font-size : 50px;
+     }
+     .center a{
+          margin-top : 100px;
+          text-decoration : none;
+     }
+</style>
+{% endblock %}

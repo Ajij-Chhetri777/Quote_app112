@@ -1,0 +1,43 @@
+{% extends 'base.html'%}
+{% block content %}
+  <div class = "lined"> {{ping.line}}
+    <br>
+   <a href = "{% url 'edit_quote' ping.key %}">edit the post</a>
+   <a href = "{% url 'delete_quote' ping.key %}">delete the post</a> 
+ <p> <a href ="{% url 'add_favourite' ping.key %}">add to favourite</a></p> </div>
+{% for c in comment %}
+  <div class = "fire">{{c.dialogue}}
+    <br><p >@{{c.user}}</p> 
+    {{c.quote}} </div>
+{% endfor %}
+<div class="form">
+    <form method = "POST">
+    {% csrf_token%}
+        {{form1.as_p}}
+        <button type = "submit">Post</button>
+    </form></div>
+
+
+{% endblock %}
+{% block title %}
+<style >
+    .fire{
+        text-align: center;
+        font-size: 30px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color: cadetblue;
+    }
+    .fire p{
+        font-size: 15px;
+    }
+    .lined{
+        text-align: center;
+        background-color: chocolate;
+        padding: 30px 40px 50px 60px;
+    }
+    .form{
+     text-align: center;
+
+    }
+</style>
+{% endblock %}

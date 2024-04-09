@@ -1,0 +1,22 @@
+{% extends 'base.html'%}
+{% block content %}
+<div class = "post">
+<form method = "POST">
+    {% csrf_token %}
+{{form.as_p}}
+<button type = "submit" class = "btn" >Submit </button>
+</form> 
+</div>
+{% endblock %}
+{% block title %}
+<style>
+.post{
+    text-align : center;
+
+}
+.post .btn {
+    background-color: red;
+    color : white;
+}
+</style>
+{% endblock %}
